@@ -35,8 +35,14 @@ if __name__ == '__main__':
     random.shuffle(l)
     print("Pass" if ((0, 9) == get_min_max(l)) else "Fail")
 
+    # normal case
+    print('normal case: ', get_min_max([1, 5, 6, 0]))
+
     # edge case test 1
     print('edge case test 1: ', get_min_max([1, "string", 5, 6, 0]))
 
     # edge case test 2
     print('edge case test 2: ', get_min_max([1, 3, None, 6, 0]))
+
+    # edge case test 3
+    print('edge case test 3: ', get_min_max([1, 3, 7, 6, 0, 1, 3, 7, 6, 0, 1, 3, 7, 6, 0, 1, 3, 7, 6, 0, 1, 3, 7, 6, 0, 8, 3, 7, 6, 0, 1, 3, 7, 6, 0, 1, 3, 7, 6, 0, 1, 3, 7, 6, 0]))

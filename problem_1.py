@@ -34,10 +34,18 @@ if __name__ == '__main__':
     print("Pass" if (1 == square_value(1)) else "Fail")
     print("Pass" if (5 == square_value(27)) else "Fail")
 
-    # edge case test 1
-    #print('edge case test 1')
+    # normal test
+    print('normal test:')
+    print(square_value(144))
+
+    # edge case test 1 (float number)
+    #print('edge case test 1 (float number):')
     #square_value(9.3)
 
-    # edge case test 2
-    #print('edge case test 2')
+    # edge case test 2 (String)
+    #print('edge case test 2 (String):')
     #square_value("string")
+
+    # edge case test 3 (long number)
+    print('edge case test 3 (long number):')
+    print(square_value(123400000000))

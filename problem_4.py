@@ -18,7 +18,7 @@ def sort_012(input_list):
 
         # Check if receive unexpected values
         if input_list[traversal_index] not in (0, 1, 2):
-            return "Unexpected value received"
+            return "Unexpected input value received"
 
         # If the pointer value is 0
         if input_list[traversal_index] == 0:
@@ -64,8 +64,14 @@ if __name__ == '__main__':
     test_function([2, 1, 2, 0, 0, 2, 1, 0, 1, 0, 0, 2, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1])
     test_function([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2])
 
+    # Normal test
+    print('normal test: ', sort_012([0, 0, 2, 2, 2, 1, 0, 1, 2, 0, 2]))
+
     # edge case test 1
-    print('edge case test 1: ', sort_012([0, 0, 2, 2, 2, 1, 3, 1, 2, 0, 2]))
+    print('edge case test 1: ', sort_012([]))
 
     # edge case test 2
     print('edge case test 2: ', sort_012([0, 0, 2, 2, 2, 1, None, 1, 2, 0, 2]))
+
+    # edge case test 3
+    print('edge case test 3: ', sort_012([None]))

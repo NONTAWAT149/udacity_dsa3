@@ -85,6 +85,9 @@ class Trie:
         if not isinstance(prefix, str):
             return False
 
+        if prefix == '':
+            return False
+
         # define current node
         current_node = self.root
 
@@ -98,6 +101,8 @@ class Trie:
 
 
 if __name__ == '__main__':
+
+    print('CASE 1: Normal case')
     MyTrie = Trie()
     wordList = [
         "ant", "anthology", "antagonist", "antonym",
@@ -107,23 +112,37 @@ if __name__ == '__main__':
     for word in wordList:
         MyTrie.insert(word)
 
-    def f(prefix):
-        if prefix != '':
-            prefixNode = MyTrie.find(prefix)
-            if prefixNode:
-                print('\n'.join(prefixNode.suffixes()))
-            else:
-                print(prefix + " not found")
-        else:
-            print('')
-
-    interact(f, prefix='');
-
     # normal case
     print('normal case - string a: ', ', '.join(MyTrie.find('a').suffixes()))
-
     # edge case test 1
-    print('edge case test 1: ', MyTrie.find('antt/'))
-
+    print('edge case test 1.1: ', MyTrie.find('antt/'))
     # edge case test 2
-    print('edge case test 2: ', MyTrie.find(None))
+    print('edge case test 1.2: ', MyTrie.find(None))
+
+
+    print('CASE 2: Edge Case 1 - empty list')
+    MyTrie2 = Trie()
+    wordList = []
+    for word in wordList:
+        MyTrie2.insert(word)
+
+    # normal case
+    print('normal case : ', MyTrie2.find(''))
+    # edge case test 1
+    print('edge case test 2.1: ', MyTrie2.find([]))
+    # edge case test 2
+    print('edge case test 2.2: ', MyTrie2.find(None))
+
+
+    print('CASE 3: Edge Case 2 - first element with empty space')
+    MyTrie3 = Trie()
+    wordList = ['', 'bert', 'gpt3', 'gpt4']
+    for word in wordList:
+        MyTrie3.insert(word)
+
+    # normal case
+    print('normal case - string g: ', ', '.join(MyTrie3.find('g').suffixes()))
+    # edge case test 1
+    print('edge case test 3.1: ', MyTrie2.find([]))
+    # edge case test 2
+    print('edge case test 3.2: ', MyTrie2.find(None))

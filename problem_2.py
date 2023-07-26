@@ -7,7 +7,7 @@ def rotated_array_search(num_list, target):
     """
 
     if not isinstance(target, int):
-        raise Exception("target must be integer")
+        return -1
 
     left_index = 0
     right_index = len(num_list) - 1
@@ -59,9 +59,15 @@ if __name__ == '__main__':
     test_function([[6, 7, 8, 1, 2, 3, 4], 1])
     test_function([[6, 7, 8, 1, 2, 3, 4], 10])
 
+    # normal test
+    print('normal test:')
+    print(rotated_array_search([6, 7, 8, 1, 2, 3, 4], 2))
+
     # edge case test 1
-    #rotated_array_search([6, 7, 8, 1, 2, 3, 4], None)
+    print('edge case test 1:')
+    print(rotated_array_search([], None))
 
     # edge case test 2
-    #rotated_array_search([6, 7, 8, 1, 2, 3, 4], "string")
+    print('edge case test 2:')
+    print(rotated_array_search([], 3))
 
